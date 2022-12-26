@@ -24,3 +24,7 @@ Now I got new Error, Hurray!!!
 undefined reference to `IPC::IglUtils::
 
 Also, spent time to enable editing through VSCode not as admin
+
+## 26/12/22
+Annoucment!!! [100%] Built target IPC_bin
+Unbelieveable!!

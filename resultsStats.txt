@@ -1,0 +1,9 @@
+output/cube-cube_null_NH_BE_interiorPoint_20221226225236t1/ 3.700000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226225246t8/ 3.700000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226225618t1/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226225628t8/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226225640t12/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226230016t1/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226230109t1/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226230118t8/ 4.560000 0.000000
+output/cube-cube_null_NH_BE_interiorPoint_20221226230128t12/ 4.560000 0.000000

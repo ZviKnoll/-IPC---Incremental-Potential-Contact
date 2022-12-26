@@ -32,7 +32,7 @@ project(IPC DESCRIPTION "Incremental Potential Contact (IPC)" LANGUAGES CXX)
 
 # Project options
 option(IPC_WITH_OPENGL "Use libgil viewer for preview and output" ON)
-option(IPC_WITH_AMGCL "Enable AMGCL linear system solver" ON)
+option(IPC_WITH_AMGCL "Enable AMGCL linear system solver" OFF)
 option(IPC_WITH_CHOLMOD "Enable CHOLMOD linear system solver" ON)
 set(IPC_DEFAULT_LINSYSSOLVER "CHOLMOD" CACHE STRING "Linear system solver to use (options: CHOLMOD, AMGCL, EIGEN)")
 set_property(CACHE IPC_DEFAULT_LINSYSSOLVER PROPERTY STRINGS "CHOLMOD" "AMGCL" "EIGEN")
