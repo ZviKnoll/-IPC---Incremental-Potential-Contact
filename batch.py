@@ -42,5 +42,6 @@ for numOfThreads in ['1', '8', '12']:
         runCommand += "{} {} {} t{}".format(
             progPath, '100' if args.offline else '10',
             inputFolderPath + inputModelNameI, numOfThreads)
+        print("*****************************************",runCommand,"*********************")
         if subprocess.call([runCommand], shell=True):
             continue

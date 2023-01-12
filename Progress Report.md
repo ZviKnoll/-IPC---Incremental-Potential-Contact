@@ -16,7 +16,7 @@ Something is getting wrong. I have downloaded the files from https://icl.utk.edu
 Next step. CMAKE suiteSparse. not matter what I have done, the cmake can't find BLAS on the system.
 Please help me to build IPC as well. (~7 Hr.)
 
-## Week 18-24/12
+## Week 18-24/12:
 Talking with Roy about the project and present him the error I'm getting while initlizing SuiteSparse, Blas & Lapacke. (~1 Hr.)
 Roy suggested to use VS Code with Ubuntu WSL.
 Good advice! The installtion success. (~3 Hr.)
@@ -25,15 +25,17 @@ undefined reference to `IPC::IglUtils::
 
 Also, spent time to enable editing through VSCode not as admin
 
-## 26/12/22
+## 26/12/22:
 Annoucment!!! [100%] Built target IPC_bin (~4 Hr.)
 Unbelieveable!!
 
-## Week 01-07/01/23
+## Week 01-07/01/23:
 Start to play with IPC. Read the Readme file and start to understand what to do with this program. (~4 Hr.)
 
-## Week 08-14/01
+## Week 08-14/01:
 Reading the Wiki file step by step in order to understand some of the parameters. (~2 Hr.)
 Starting to debug the code. Line by line to reveal where my addition to IPC should be implement. (~2 Hr.)
 According to the talk with Roy on 18/12 my project is to enable the simulation on object that consisting from identical pieces.
-It should be in mesh.cpp. Next time going to debug this file.
+It should be in mesh.cpp.
+Debuging main.cpp. Still hard to see where is the loop that run until the iteration number done.
+Also, need to check what I should implement. Is it one big mesh and then all the mess triangle should act like one object, or the purpose is to implemnt it when to objects are nearby and the same force is up to both. (~4 Hr.)
