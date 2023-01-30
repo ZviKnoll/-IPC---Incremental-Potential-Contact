@@ -875,6 +875,7 @@ int main(int argc, char* argv[])
     std::vector<IPC::DirichletBC> DirichletBCs;
     std::vector<IPC::NeumannBC> NeumannBCs;
     std::vector<std::pair<int, std::string>> meshSeqFolderPath;
+    // Load the mesh from file
     if (suffix == ".txt" || suffix == ".ipc") {
         loadSucceed = !config.loadFromFile(meshFilePath);
         if (loadSucceed) {
@@ -912,7 +913,7 @@ int main(int argc, char* argv[])
                             exit(1);
                         }
                         newE.resize(0, 2);
-
+                        spdlog::debug("Line 916: Mesh Loaded");
                         if (std::isfinite(config.inputShapeMaterials[i][0]) && std::isfinite(config.inputShapeMaterials[i][1]) && std::isfinite(config.inputShapeMaterials[i][2])) {
                             if (config.inputShapeMaterials[i][0] > 0 && config.inputShapeMaterials[i][1] > 0) {
                                 Eigen::Vector3i startToEnd;
@@ -1193,6 +1194,7 @@ int main(int argc, char* argv[])
     vertAmt_input = V.rows();
 
     // construct mesh data structure
+    spdlog::debug("Line 1197");
     IPC::Mesh<DIM>* temp = new IPC::Mesh<DIM>(V, F, SF, E, UV,
         componentNodeRange, componentSFRange, componentCERange, componentCoDim,
         componentMaterial, componentLVels, componentAVels, componentInitVels, DirichletBCs, NeumannBCs,
@@ -1224,6 +1226,7 @@ int main(int argc, char* argv[])
     }
 
     {
+        spdlog::debug("Line 1228: for output surface mesh");
         // for output surface mesh
         isSurfNode.resize(0);
         isSurfNode.resize(temp->V.rows(), false);
@@ -1256,6 +1259,7 @@ int main(int argc, char* argv[])
     }
 
     {
+        spdlog::debug("Line 1261: for output codimensional segment mesh");
         // for output codimensional segment mesh
         isCENode.resize(0);
         isCENode.resize(temp->V.rows(), false);
@@ -1418,6 +1422,7 @@ int main(int argc, char* argv[])
 
     if (offlineMode) {
         while (true) {
+            spdlog::debug("Line 1425: While");
 #ifdef USE_OPENGL
             preDrawFunc(viewer);
             postDrawFunc(viewer);

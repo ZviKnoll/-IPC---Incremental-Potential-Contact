@@ -47,3 +47,5 @@ Unfortunately my wife's grandfather pasy away, I didn't worked on the project
 I learned to a Distributed Algorithms Exam. I didn't worked on the project.
 
 ## 29/01-04/02:
+Check main cpp.
+The suspect for now is: src\TimeStepper\Optimizer.cpp
