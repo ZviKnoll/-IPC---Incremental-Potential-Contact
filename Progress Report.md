@@ -5,7 +5,7 @@ Computer Graphics lab course
 # IPC - Incremental Potential Contact
 
 ## Progress Report:
-Week 6-12/11:
+## Week 6-12/11:
 Reading the paper introduction, (~2 Hr.)
 Setting up the git repository, (~1 Hr.)
 Initial review of the code, (~2 Hr.)
@@ -39,3 +39,11 @@ According to the talk with Roy on 18/12 my project is to enable the simulation o
 It should be in mesh.cpp.
 Debuging main.cpp. Still hard to see where is the loop that run until the iteration number done.
 Also, need to check what I should implement. Is it one big mesh and then all the mess triangle should act like one object, or the purpose is to implemnt it when to objects are nearby and the same force is up to both. (~4 Hr.)
+
+## Week 15-21/01:
+Unfortunately my wife's grandfather pasy away, I didn't worked on the project
+
+## 22-28/01:
+I learned to a Distributed Algorithms Exam. I didn't worked on the project.
+
+## 29/01-04/02:
