@@ -57,4 +57,4 @@ In this function, the main loop, for each iteration from 0 to maxIter save PNG i
 After some validations call Optimizer.cpp::fullyImplicit_IP()
 In this function, start the timer, call Optimizer.cpp::initX(), stop the timer, start again and then re-compute all the parameters.
 My code should be somehow there
-Add some debug lines to the code in purpose to ease the next time I dive into the code.
+Add some debug lines to the code in purpose to ease the next time I dive into the code. (~4Hr.)
