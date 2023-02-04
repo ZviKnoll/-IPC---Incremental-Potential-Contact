@@ -1529,14 +1529,14 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
     timer_step.start(10);
     initX(animConfig.warmStart, activeSet_next);
     timer_step.stop();
-
+    spdlog::debug("After initX - Line 1532 in Optimizer.cpp");
     fricDHat = solveFric ? fricDHat0 : -1.0;
     dHat = dHatEps * dHatEps;
     if (!animConfig.useAbsParameters) {
         dHat *= bboxDiagSize2;
     }
     computeConstraintSets(result);
-
+    spdlog::debug("After computeConstraintSets - Line 1539 in Optimizer.cpp");
     kappa = 0.0;
     if (animConfig.tuning.size() > 0) {
         kappa = animConfig.tuning[0];
@@ -1548,7 +1548,7 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
 #ifdef ADAPTIVE_KAPPA
     initKappa(kappa);
 #endif
-
+    spdlog::debug("After kappa - Line 1551 in Optimizer.cpp");
     timer_step.start(10);
     Eigen::VectorXd constraintVal;
     bool activeSetChanged = false;
@@ -1571,10 +1571,12 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
             }
         }
     }
+    spdlog::debug("After for animConfig.collisionObjects - Line 1574 in Optimizer.cpp");
     for (int coI = 0; coI < animConfig.meshCollisionObjects.size(); ++coI) {
         animConfig.meshCollisionObjects[coI]->evaluateConstraints(result,
             MMActiveSet[coI], constraintVal);
     }
+    spdlog::debug("After for animConfig.meshCollisionObjects - Line 1579 in Optimizer.cpp");
     if (animConfig.isSelfCollision) {
         int startCI = constraintVal.size();
         SelfCollisionHandler<dim>::evaluateConstraints(result, MMActiveSet.back(), constraintVal);
@@ -1607,6 +1609,7 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
 
     timer_step.start(10);
     computeEnergyVal(result, true, lastEnergyVal); // for possible warmstart and pre-scripting Dirichlet boundary conditions
+    spdlog::debug("After computeEnergyVal - Line 1612 in Optimizer.cpp");
     file_iterStats << globalIterNum << " 0.0 0" << std::endl;
     // globaIterNum lineSearchStepSize constraintNum
     timer_step.stop();
@@ -1614,6 +1617,7 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
     while (true) {
         initSubProb_IP();
         solveSub_IP(kappa, activeSet_next, MMActiveSet_next);
+        spdlog::debug("After for solveSub_IP - Line 1620 in Optimizer.cpp");
         ++fricIterI;
 
         timer_step.start(10);
@@ -1638,10 +1642,12 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
                 }
             }
         }
+        spdlog::debug("After for animConfig.collisionObjects - Line 1645 in Optimizer.cpp");
         for (int coI = 0; coI < animConfig.meshCollisionObjects.size(); ++coI) {
             animConfig.meshCollisionObjects[coI]->evaluateConstraints(result,
                 MMActiveSet[coI], constraintVal);
         }
+        spdlog::debug("After for animConfig.meshCollisionObjects - Line 1650 in Optimizer.cpp");
         if (animConfig.isSelfCollision) {
             int startCI = constraintVal.size();
             SelfCollisionHandler<dim>::evaluateConstraints(result, MMActiveSet.back(), constraintVal);
@@ -1671,7 +1677,7 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
             }
         }
         timer_step.stop();
-
+        spdlog::debug("After timer_step.stop() - Line 1680 in Optimizer.cpp");
         bool updateDHat = true, updateFricDHat = true;
         if (constraintVal.size()) {
             logFile << "d range: [" << constraintVal.minCoeff() << ", " << constraintVal.maxCoeff() << "]" << std::endl;
@@ -1814,7 +1820,7 @@ bool Optimizer<dim>::fullyImplicit_IP(void)
         file_sysL << i << " ";
     }
     file_sysL << std::endl;
-
+    spdlog::debug("End of the function - Line 1823 in Optimizer.cpp");
     return false;
 }
 

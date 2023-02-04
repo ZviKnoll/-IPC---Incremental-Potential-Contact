@@ -41,11 +41,20 @@ Debuging main.cpp. Still hard to see where is the loop that run until the iterat
 Also, need to check what I should implement. Is it one big mesh and then all the mess triangle should act like one object, or the purpose is to implemnt it when to objects are nearby and the same force is up to both. (~4 Hr.)
 
 ## Week 15-21/01:
-Unfortunately my wife's grandfather pasy away, I didn't worked on the project
+Unfortunately my wife's grandfather past away, I didn't worked on the project
 
 ## 22-28/01:
 I learned to a Distributed Algorithms Exam. I didn't worked on the project.
 
 ## 29/01-04/02:
 Check main cpp.
-The suspect for now is: src\TimeStepper\Optimizer.cpp
+The suspect for now is: src\TimeStepper\Optimizer.cpp (~2Hr.)
+
+main.cpp::main(): load all the files and build everything you need
+At the end of main function in line 1427 call to main.cpp::preDrawFunc()
+In this function, set the run mode and then call main.cpp::proceedOptimization()
+In this function, the main loop, for each iteration from 0 to maxIter save PNG if needs and call Optimizer.cpp::solve() to solve 1 iteration.
+After some validations call Optimizer.cpp::fullyImplicit_IP()
+In this function, start the timer, call Optimizer.cpp::initX(), stop the timer, start again and then re-compute all the parameters.
+My code should be somehow there
+Add some debug lines to the code in purpose to ease the next time I dive into the code.
