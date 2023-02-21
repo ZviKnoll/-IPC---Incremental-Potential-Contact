@@ -1194,7 +1194,7 @@ int main(int argc, char* argv[])
     vertAmt_input = V.rows();
 
     // construct mesh data structure
-    spdlog::debug("Line 1197");
+    spdlog::debug("main.cpp::Line 1197");
     IPC::Mesh<DIM>* temp = new IPC::Mesh<DIM>(V, F, SF, E, UV,
         componentNodeRange, componentSFRange, componentCERange, componentCoDim,
         componentMaterial, componentLVels, componentAVels, componentInitVels, DirichletBCs, NeumannBCs,

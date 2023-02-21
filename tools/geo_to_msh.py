@@ -5,6 +5,7 @@ import numpy
 import pymesh
 
 input_path = pathlib.Path(sys.argv[1])
+print(input_path)
 output_path = input_path.with_suffix(".msh")
 
 assert(input_path.exists())

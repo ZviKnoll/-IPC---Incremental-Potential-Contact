@@ -43,10 +43,10 @@ Also, need to check what I should implement. Is it one big mesh and then all the
 ## Week 15-21/01:
 Unfortunately my wife's grandfather past away, I didn't worked on the project
 
-## 22-28/01:
+## Week 22-28/01:
 I learned to a Distributed Algorithms Exam. I didn't worked on the project.
 
-## 29/01-04/02:
+## Week 29/01-04/02:
 Check main cpp.
 The suspect for now is: src\TimeStepper\Optimizer.cpp (~2Hr.)
 
@@ -58,3 +58,12 @@ After some validations call Optimizer.cpp::fullyImplicit_IP()
 In this function, start the timer, call Optimizer.cpp::initX(), stop the timer, start again and then re-compute all the parameters.
 My code should be somehow there
 Add some debug lines to the code in purpose to ease the next time I dive into the code. (~4Hr.)
+
+## Week 19-25/02:
+Roy gave me model to simulate. He gave me .stl file. Occurs many probelm - the program know to deal with .msh/.ele/.obj/.seg/.pt so first move is to convert it from stl to obj. Both of the files, the source and the converted are in input directory.
+So, I ran it but i got a msg "Segmentation fault" - the error comes from IGL - Segmentation Function.
+Looking on example to check how to load Obj files.
+Temp conclusion: IPC simulation work in this pattern. Given some Object (Geometric) to set the area, simulate the mesh object when they have contact each other.
+I used vectary software to create mesh like the object Roy gave me. Unfortunately, just after I finish to copy the object I realized that this software know to export just to geometric object.
+In order to solve this, I downloaded gmsh program, I tried to use it but it really uncomfortable. I sent message to Roy to ask him which program I should use. (~3 hr)
+

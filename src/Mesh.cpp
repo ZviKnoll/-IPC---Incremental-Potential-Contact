@@ -56,6 +56,7 @@ Mesh<dim>::Mesh(const Eigen::MatrixXd& V_mesh,
     const std::vector<std::pair<int, std::string>>& p_meshSeqFolderPath,
     double YM, double PR, double rho)
 {
+    spdlog::debug("Mesh.cpp::Mesh Line 59"); 
     assert(V_mesh.rows() > 0);
     assert(F_mesh.rows() > 0);
 
@@ -415,6 +416,7 @@ void Mesh<dim>::computeMassMatrix(const igl::MassMatrixType type)
 template <int dim>
 void Mesh<dim>::computeFeatures(bool multiComp, bool resetDBCV)
 {
+    spdlog::debug("Mesh.cpp::computeFeaturs Line 419");
     if (resetDBCV) {
         DBCVertexIds.clear();
         DBCVertexIds.insert(0);
@@ -661,6 +663,7 @@ int Mesh<dim>::sfICoDim(int sfI) const
 template <int dim>
 void Mesh<dim>::setLameParam(double YM, double PR)
 {
+    spdlog::debug("Mesh.cpp::setLameParam Line 665");
     u = Eigen::VectorXd::Constant(F.rows(), YM / 2.0 / (1.0 + PR));
     lambda = Eigen::VectorXd::Constant(F.rows(), YM * PR / (1.0 + PR) / (1.0 - 2.0 * PR));
     for (const auto& matI : componentMaterial) {
