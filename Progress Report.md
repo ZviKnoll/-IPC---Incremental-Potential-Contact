@@ -48,7 +48,7 @@ I learned to a Distributed Algorithms Exam. I didn't worked on the project.
 
 ## Week 29/01-04/02:
 Check main cpp.
-The suspect for now is: src\TimeStepper\Optimizer.cpp (~2Hr.)
+The suspect for now is: src\TimeStepper\Optimizer.cpp (~2 Hr.)
 
 main.cpp::main(): load all the files and build everything you need
 At the end of main function in line 1427 call to main.cpp::preDrawFunc()
@@ -57,7 +57,7 @@ In this function, the main loop, for each iteration from 0 to maxIter save PNG i
 After some validations call Optimizer.cpp::fullyImplicit_IP()
 In this function, start the timer, call Optimizer.cpp::initX(), stop the timer, start again and then re-compute all the parameters.
 My code should be somehow there
-Add some debug lines to the code in purpose to ease the next time I dive into the code. (~4Hr.)
+Add some debug lines to the code in purpose to ease the next time I dive into the code. (~4 Hr.)
 
 ## Week 19-25/02:
 Roy gave me model to simulate. He gave me .stl file. Occurs many probelm - the program know to deal with .msh/.ele/.obj/.seg/.pt so first move is to convert it from stl to obj. Both of the files, the source and the converted are in input directory.
@@ -65,10 +65,10 @@ So, I ran it but i got a msg "Segmentation fault" - the error comes from IGL - S
 Looking on example to check how to load Obj files.
 Temp conclusion: IPC simulation work in this pattern. Given some Object (Geometric) to set the area, simulate the mesh object when they have contact each other.
 I used vectary software to create mesh like the object Roy gave me. Unfortunately, just after I finish to copy the object I realized that this software know to export just to geometric object.
-In order to solve this, I downloaded gmsh program, I tried to use it but it really uncomfortable. I sent message to Roy to ask him which program I should use. (~3 hr)
+In order to solve this, I downloaded gmsh program, I tried to use it but it really uncomfortable. I sent message to Roy to ask him which program I should use. (~3 Hr.)
 
 ## Week 14-20/05:
-Meeting with Roy about the Project progress. He noticed me how to continue and how the work should be. (~1 hr)
-Some google about how to convert stl file to msh. (~2 hr)
+Meeting with Roy about the Project progress. He noticed me how to continue and how the work should be. (~1 Hr.)
+Some google about how to convert stl file to msh. (~2 Hr.)
 
 
