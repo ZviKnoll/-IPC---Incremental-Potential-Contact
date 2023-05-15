@@ -67,3 +67,8 @@ Temp conclusion: IPC simulation work in this pattern. Given some Object (Geometr
 I used vectary software to create mesh like the object Roy gave me. Unfortunately, just after I finish to copy the object I realized that this software know to export just to geometric object.
 In order to solve this, I downloaded gmsh program, I tried to use it but it really uncomfortable. I sent message to Roy to ask him which program I should use. (~3 hr)
 
+## Week 14-20/05:
+Meeting with Roy about the Project progress. He noticed me how to continue and how the work should be. (~1 hr)
+Some google about how to convert stl file to msh. (~2 hr)
+
+
