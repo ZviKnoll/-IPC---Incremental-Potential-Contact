@@ -915,8 +915,10 @@ int main(int argc, char* argv[])
                         newE.resize(0, 2);
                         spdlog::debug("Line 916: Mesh Loaded");
                         if (std::isfinite(config.inputShapeMaterials[i][0]) && std::isfinite(config.inputShapeMaterials[i][1]) && std::isfinite(config.inputShapeMaterials[i][2])) {
+                            spdlog::debug("Line 918: ");
                             if (config.inputShapeMaterials[i][0] > 0 && config.inputShapeMaterials[i][1] > 0) {
                                 Eigen::Vector3i startToEnd;
+                                spdlog::debug("Line 921: ");
                                 startToEnd[0] = i;
                                 startToEnd[1] = F.rows();
                                 startToEnd[2] = F.rows() + newF.rows();
@@ -927,6 +929,7 @@ int main(int argc, char* argv[])
                                     inputShapePathStr, config.inputShapeMaterials[i][0], config.inputShapeMaterials[i][1], config.inputShapeMaterials[i][2]);
                             }
                         }
+                        spdlog::debug("Line 932: ");
                     }
                     else if (meshFileSuffix == ".ele") {
                         IPC::IglUtils::readNodeEle(inputShapePathNoSuffix, newV, newF, newSF);
@@ -1013,7 +1016,7 @@ int main(int argc, char* argv[])
                         spdlog::error("Unsupported tet mesh file format: {:s}", meshFileSuffix);
                         exit(1);
                     }
-
+                    spdlog::debug("Line 1019: ");
                     if (!std::isnan(config.inputShapeLVels[i][0]) && !std::isnan(config.inputShapeLVels[i][1]) && !std::isnan(config.inputShapeLVels[i][2])) {
                         Eigen::Vector3i startToEnd;
                         startToEnd[0] = i;
@@ -1035,7 +1038,7 @@ int main(int argc, char* argv[])
                         startToEnd[2] = V.rows() + newV.rows();
                         componentInitVels.emplace_back(startToEnd, config.inputShapeInitVels[i]);
                     }
-
+                    spdlog::debug("Line 1041: ");
                     std::vector<bool> isNodeOnBoundary(newV.rows(), newSF.rows() == 0);
                     for (int sfi = 0; sfi < newSF.rows(); sfi++) {
                         for (int sfj = 0; sfj < newSF.cols(); sfj++) {
@@ -1069,14 +1072,15 @@ int main(int argc, char* argv[])
                         }
                         ++NBCI;
                     }
+                    spdlog::debug("Line 1075: ");
                 }
-
+                spdlog::debug("Line 1077: ");
                 int existVrt = (int)V.rows();
                 for (int i = 0; i < (int)newV.rows(); ++i) {
                     Eigen::Vector3d p = newV.row(i).transpose();
                     newV.row(i) = (rotate * p.cwiseProduct(scale) + translate).transpose();
                 }
-
+                spdlog::debug("Line 1083: ");
                 if (newF.rows()) {
                     newF.array() += existVrt;
                 }
@@ -1086,15 +1090,19 @@ int main(int argc, char* argv[])
                 if (newE.rows()) {
                     newE.array() += existVrt;
                 }
-
+                spdlog::debug("Line 1093: ");
                 auto append = [](auto& dst, const auto& src) {
                     int dstRows = dst.rows();
                     int srcRows = src.rows();
                     int srcCols = src.cols();
+                    spdlog::debug("Line 1098: ");
                     dst.conservativeResize(dstRows + srcRows, Eigen::NoChange);
+                    spdlog::debug("Line 1100: ");
                     dst.block(dstRows, 0, srcRows, srcCols) = src;
                 };
+                spdlog::debug("Line 1103: ");
                 append(V, newV);
+                spdlog::debug("Line 1105: ");
                 if (newF.rows()) {
                     append(F, newF);
                 }
@@ -1104,13 +1112,14 @@ int main(int argc, char* argv[])
                 if (newE.rows()) {
                     append(E, newE);
                 }
-
+                spdlog::debug("Line 1115: ");
                 componentNodeRange.emplace_back(V.rows());
                 componentSFRange.emplace_back(SF.rows());
                 componentCERange.emplace_back(E.rows());
 
                 compVAccSize.emplace_back(V.rows());
                 compFAccSize.emplace_back(F.rows());
+                spdlog::debug("Line 1122: ");
             }
 
             UV = V.leftCols(DIM);

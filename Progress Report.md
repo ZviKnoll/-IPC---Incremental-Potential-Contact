@@ -70,5 +70,15 @@ In order to solve this, I downloaded gmsh program, I tried to use it but it real
 ## Week 14-20/05:
 Meeting with Roy about the Project progress. He noticed me how to continue and how the work should be. (~1 Hr.)
 Some google about how to convert stl file to msh. (~2 Hr.)
+Ask Chat GPT what is the best way to convert from .stl to .msh, the answer I got is to use GMSH program. 
+After using it, I got new Error, "corrupted size vs. prev_size in fastbins", It is mean that the file is corrupted ot something.
+The error is from line 1099 in main.cpp. when the code try to append the allocation memory according to the msh file. Still nee to check why it is uppening on mesh that created from stl using GMSH program. (~2 Hr.)
 
+## Week 28/05-01/06:
+Taking a tutorial on Blender in order to realize how to split and merge the object (~5 Hr.)
 
+## Jun - Jul:
+I took a break. I moved my apartment and then the exams 
+
+## Week 30/07-03/08:
+Trying to Join the two stl objects. Succeseded but fail to export as .msh file. I'll try again later (~2 Hr.)
