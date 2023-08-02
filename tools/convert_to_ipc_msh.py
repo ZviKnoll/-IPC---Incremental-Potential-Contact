@@ -29,8 +29,8 @@ def parse_arguments():
 
 def main():
     args = parse_arguments()
-
     input_mesh = pymesh.load_mesh(str(args.input))
+    print(input_mesh)
     if input_mesh.num_voxels == 0:  # tetrahedralize the mesh
         output_mesh = pymesh.tetrahedralize(input_mesh, args.cell_size)
     else:  # mesh is already a tet mesh, just convert to IPC compatible

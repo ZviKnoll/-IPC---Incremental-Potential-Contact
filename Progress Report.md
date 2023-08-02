@@ -81,4 +81,4 @@ Taking a tutorial on Blender in order to realize how to split and merge the obje
 I took a break. I moved my apartment and then the exams 
 
 ## Week 30/07-03/08:
-Trying to Join the two stl objects. Succeseded but fail to export as .msh file. I'll try again later (~2 Hr.)
+Trying to Join the two stl objects. Succeseded but fail to export as .msh file. I'll try again later (~4 Hr.)
