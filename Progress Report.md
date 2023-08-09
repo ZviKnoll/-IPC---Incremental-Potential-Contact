@@ -81,4 +81,9 @@ Taking a tutorial on Blender in order to realize how to split and merge the obje
 I took a break. I moved my apartment and then the exams 
 
 ## Week 30/07-03/08:
-Trying to Join the two stl objects. Succeseded but fail to export as .msh file. I'll try again later (~4 Hr.)
+Split the provided .stl into two separate Z objects and then merge them back into a single element, 
+ensuring that they cannot be split again (~4 Hr.)
+Export the merged object as a .msh file. The initial attempt failed, but the subsequent attempt was successful (~1 Hr.)
+I discovered that there are two types of .msh files. The one exported from Blender is not compatible with the IPC code. After conducting some research, I came across a Python script in the IPC repository itself that can update the .msh file, making it compatible with IPC.
+My next steps involve getting this script to run successfully.
+I don't know what I'm doing wrong, I tried to install PyMesh by this document: https://pymesh.readthedocs.io/en/latest/installation.html but at the end, the module not installed as needed (~2 Hr.)
