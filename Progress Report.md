@@ -89,3 +89,8 @@ Export the merged object as a .msh file. The initial attempt failed, but the sub
 I discovered that there are two types of .msh files. The one exported from Blender is not compatible with the IPC code. After conducting some research, I came across a Python script in the IPC repository itself that can update the .msh file, making it compatible with IPC.
 My next steps involve getting this script to run successfully.
 I don't know what I'm doing wrong, I tried to install PyMesh by this document: https://pymesh.readthedocs.io/en/latest/installation.html but at the end, the module not installed as needed (~2 Hr.)
+
+## Week 27/08-01/09:
+Trying different tests, it seems the problem is with the mesh I make. When I made an .msh file using pymesh, the functions worked like they should. (~1 Hr.)
+Found documentation that describe the diffrences between GMSH to msh. In order to create GMSH need to do the following: 
+Use Blender to merge the 2 stl's elements -> Export the merged element as obj -> use gmsh lib to generete the gmsh mesh file. (~1 Hr.)
