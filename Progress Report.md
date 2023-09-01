@@ -93,4 +93,4 @@ I don't know what I'm doing wrong, I tried to install PyMesh by this document: h
 ## Week 27/08-01/09:
 Trying different tests, it seems the problem is with the mesh I make. When I made an .msh file using pymesh, the functions worked like they should. (~1 Hr.)
 Found documentation that describe the diffrences between GMSH to msh. In order to create GMSH need to do the following: 
-Use Blender to merge the 2 stl's elements -> Export the merged element as obj -> use gmsh lib to generete the gmsh mesh file. (~1 Hr.)
+Use Blender to merge the 2 stl's elements -> Export the merged element as obj -> use gmsh lib to generete the gmsh mesh file. (~3 Hr.)
