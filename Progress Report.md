@@ -94,3 +94,9 @@ I don't know what I'm doing wrong, I tried to install PyMesh by this document: h
 Trying different tests, it seems the problem is with the mesh I make. When I made an .msh file using pymesh, the functions worked like they should. (~1 Hr.)
 Found documentation that describe the diffrences between GMSH to msh. In order to create GMSH need to do the following: 
 Use Blender to merge the 2 stl's elements -> Export the merged element as obj -> use gmsh lib to generete the gmsh mesh file. (~3 Hr.)
+
+## Week 03-08/09:
+I thought other solution. Use both software, Blender and GMSH UI. With Blender Merge the object Then, open it with GMSH and save as msh file.
+The first try failed with the error "Invalid Size". First thought that the object is too complex. Probably, it not just it. In the example objects there are many object way more complex like the armadilo219K.  So, I used Blender to reduce the complexity of the object. Then re-format using GMSH.
+The second try failed with the error "Segmentation fault"
+I think that the only solution is to clone this object using Gmsh. It is not going to be fun at all. (~3 Hr.)
