@@ -4,6 +4,9 @@ Computer Graphics lab course
 
 # IPC - Incremental Potential Contact
 [GitHub repository](https://github.com/ZviKnoll/IPC---Incremental-Potential-Contact.git)
+
+[Conclusion](#conclusion)
+
 ## Progress Report:
 ## Week 6-12/11:
 Reading the paper introduction, (~2 Hr.)
@@ -106,7 +109,9 @@ Writing the conclusion (~2 Hr.)
 # Conclusion:
 
 IPC Project has 3 parts:
+
 **Understanding IPC repository**
+
 This part took me about three months and approximately 38 work hours.
 
 First, I read research papers and watched videos. IPC is a simulator built by students from the University of Pennsylvania, Adobe Research, and New York University. The purpose of this tool is to simulate the effects of contact between various types of items. This tool enables high-rate time stepping, regardless of the degree of compression and contact.
@@ -119,14 +124,14 @@ Fourth, I began to understand the code and thought about where I should add my p
 
 _Partial Summary_
 IPC simulator is a highly useful tool for calculating the effects of contact on various items. The code consists of more than 2000 lines, making it quite challenging to comprehend every aspect of it without prior knowledge of IGL, physics, and graphics. Each simulation loads a text file that describes every component of the simulation, including the objects (with paths to mesh files), the obstacles (with paths to STL or OBJ files), and additional instructions such as gravity, speed, object placement, object textures, and density.
-
 ![IPC Screenshot1](Report%20assets/Screenshot%202023-09-04%20204820.png)
-![IPC Screenshot2](Report%20assets/Screenshot%202023-09-04%20210210.png)
-![IPC Screenshot3](Report%20assets/Screenshot%202023-09-04%20210327.png)
+
+
+
+Roy's task is to investigate how the simulator behaves when an object with multiple identical parts interacts with another object upon contact. After running some tests, I noticed that this functionality might already be implemented. I loaded two objects, a large bar and a cube. When the cube fell onto the bar, as depicted in the picture below, the bar began to twist and was no longer straight. 
+![IPC Screenshot2](Report%20assets/Screenshot%202023-09-04%20210327.png)
+![IPC Screenshot3](Report%20assets/Screenshot%202023-09-04%20210210.png)
 ![IPC Screenshot4](Report%20assets/Screenshot%202023-09-04%20210332.png)
-
-
-Roy's task is to investigate how the simulator behaves when an object with multiple identical parts interacts with another object upon contact. After running some tests, I noticed that this functionality might already be implemented. I loaded two objects, a large bar and a cube. When the cube fell onto the bar, as depicted in the picture above, the bar began to twist and was no longer straight. 
 
 
 **Simulate Roy Object using IPC Simulator**
